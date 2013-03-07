@@ -1,0 +1,4 @@
+class Room < ActiveRecord::Base
+  attr_accessible :address, :available, :city, :description, :id, :image, :places, :price
+  belongs_to :user
+end

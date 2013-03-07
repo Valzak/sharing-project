@@ -1,0 +1,5 @@
+class UserRoom < ActiveRecord::Base
+  
+  attr_accessible :end_date, :start_date
+  belongs_to :user
+end

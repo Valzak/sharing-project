@@ -1,0 +1,5 @@
+class Route < ActiveRecord::Base
+  attr_accessible :date, :description, :destination, :id, :origin, :places, :price
+  validates_presence_of :origin, :destination, :date
+  belongs_to :user
+end

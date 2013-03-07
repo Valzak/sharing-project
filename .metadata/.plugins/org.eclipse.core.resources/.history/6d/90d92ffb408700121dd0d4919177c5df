@@ -1,0 +1,11 @@
+class User < ActiveRecord::Base
+  
+  attr_accessible :email, :id, :nickName, :pass, :phone, :punctuation
+  validates_presence_of :email, :pass, :nickName
+  validates_uniqueness_of :email, :nickName
+  has_many :rooms, :user_rooms
+  has_many :owners, :class_name=>"route", :foreign_key=>"owner_route_id"
+  has_many :participates, :class_name=>"route", :foreign_key=>"participate_route_id"
+  
+end
+

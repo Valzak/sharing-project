@@ -1,0 +1,10 @@
+class User < ActiveRecord::Base
+  
+  attr_accessible :email, :id, :nickName, :pass, :phone, :punctuation
+  validates_presence_of :email, :pass, :nickName
+  validates_uniqueness_of :email, :nickName
+  has_many :rooms, :routes
+  belongs_to :rooms
+  
+end
+
